@@ -1,0 +1,554 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+
+ //...................................................***DECLARANDO FUNCOES AUXILIARES...........................................................................................
+ 
+//....................................................****FUNCAO CONTA SEGUNDOS****..........................................
+                                     void conta_segundos (int l){
+                                         
+                                         
+                                         
+                                                                                           
+                                                                                              int i = 0, virada = 1, agora = 0, anterior = 0;
+                                                                                           
+                                                                                           
+                                                                                              while (i <= l){
+                                                                                                 
+                                                                                                  //se virada eh par eu vou guardar o valor aleatorio em agora
+                                                                                                  if (virada % 2 == 0)
+                                                                                            {
+                                                                                             srand ((unsigned) time (NULL));
+                                                                                             agora = rand () % 10 + 1;
+                                                                                            }
+                                                                                                  //se virada nao eh par eu vou guardar o valor aleatorio em anterior
+                                                                                                  if (virada % 2 != 0)
+                                                                                            {
+                                                                                             srand ((unsigned) time (NULL));
+                                                                                             anterior = rand () % 10 + 1;
+                                                                                            }
+                                                                                                  /*se o valor que eu guardei quando virada era par for diferente do que eu guardei quando virada
+                                                                                                     era impar, entao significa que o valor aleatorio gerado acabou de mudar
+                                                                                                     se ele mudou, quer dizer que passou um segundo */
+                                                                                           
+                                                                                                  if (agora != anterior){i++;}
+                                                                                           
+                                                                                           
+                                                                                           
+                                                                                                  virada++;}
+                                                                                           
+                                                                                              return;
+                                                                                            }
+//...................................................****FUNCAO ROLA D10****........................................................................
+                                   
+                                    int rola_d10(){
+                                                       
+                                                                                            int i=0, dado;
+                                                                                           
+                                                                                            srand( (unsigned)time(NULL) );
+                                                                                            dado=rand()%10+1;
+                                                                                            printf("\nDADO = %i",dado);
+                                                                                           
+                                                                                            return  dado;
+                                                                                            }
+                                                                       
+//...................................................****FUNCAO COMECO****..............................................................................
+                                                                     
+                                   
+                                    void comeco(){
+ 
+                                                                                            typedef struct
+                                                                                            {
+   
+
+                                                                                            char nome[30];
+                                                                                                                 
+                                                                                            int forca;
+                                                                                                                 
+                                                                                            int agilidade;
+                                                                                                                 
+                                                                                            int resistencia;
+                                                                                                                 
+                                                                                            int magia;
+                                                                                                               
+                                                                                                           
+                                                                                            } personagem; //ESTRUCT DO PERSONAGEM
+                                                                                                             
+                                                                                                             
+                                                                                                             
+                                                                                            personagem p1, p2;
+                                                                                            int ac[5];
+                                                                                            char escolha;
+                                                                                            int tempo=0;
+                                                                                            int contador=0;
+                                                                                                             
+                                                                                            //................................****TELA DA ESCOLHA DE CLASSES***.....................  
+                                                                                            printf ("\t\t\t\t\t\tESCOLHA SUA CLASSE\n");
+                                                                                             
+                                                                                             
+                                                                                            printf ("\t\t\tARQUEIRO:1\n");
+                                                                                             
+                                                                                             
+                                                                                            printf ("\t\t\tGUERREIRO:2\n");
+                                                                                             
+                                                                                             
+                                                                                            printf ("\t\t\tBARBARO:3\n");
+                                                                                             
+                                                                                             
+                                                                                            printf ("\t\t\tMAGO:4\n");
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                            scanf ("%c", &escolha);
+                                                                                            system("clear");
+                                                                                            system("clear");
+                                                                                            printf ("\n\n\n");
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                            //...............................DECLARANDO OS VALORES DE CADA CLASSE.....................    
+                                                                                                if (escolha == '1')
+                                                                                               
+                                                                                                {
+                                                                                                 
+                                                                                            p1.forca = 3;
+                                                                                                 
+                                                                                            p1.resistencia = 3;
+                                                                                                 
+                                                                                            p1.agilidade = 5;
+                                                                                                 
+                                                                                            p1.magia = 3;
+                                                                                               
+                                                                                             
+                                                                                            }
+                                                                                             
+                                                                                             
+                                                                                            if (escolha == '2')
+                                                                                               
+                                                                                                {
+                                                                                                 
+                                                                                            p1.forca = 4;
+                                                                                                 
+                                                                                            p1.resistencia = 4;
+                                                                                                 
+                                                                                            p1.agilidade = 3;
+                                                                                                 
+                                                                                            p1.magia = 2;
+                                                                                               
+                                                                                            }
+                                                                                             
+                                                                                             
+                                                                                            if (escolha == '3')
+                                                                                               
+                                                                                                {
+                                                                                                 
+                                                                                            p1.forca = 5;
+                                                                                                 
+                                                                                            p1.resistencia = 4;
+                                                                                                 
+                                                                                            p1.agilidade = 1;
+                                                                                                 
+                                                                                            p1.magia = 1;
+                                                                                               
+                                                                                            }
+                                                                                             
+                                                                                             
+                                                                                            if (escolha == '4')
+                                                                                               
+                                                                                                {
+                                                                                                 
+                                                                                            p1.forca = 2;
+                                                                                                 
+                                                                                            p1.resistencia = 3;
+                                                                                                 
+                                                                                            p1.agilidade = 2;
+                                                                                                 
+                                                                                            p1.magia = 5;
+                                                                                               
+                                                                                            }
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                            //...........................***TELA DA ESCOLHA DO NOME***.................................  
+                                                                                            printf ("\t\t\t\t\t\tDIGITE SEU NOME\n");
+                                                                                             
+                                                                                             
+                                                                                            scanf ("%s", p1.nome);
+                                                                                             
+                                                                                             
+                                                                                            printf ("\n\n\n");
+                                                                                            getchar();
+                                                                                            system("clear");
+                                                                                             
+                                                                                            //..........................***TELA DA APRESENTACAO DO PERSONAGEM***.......................
+                                                                                                printf
+                                                                                                ("\n\t\t\t\t\t\tSEU PERSONAGEM EH \n\t\t\tNome:%s\n\t\t\tForca:%i\n\t\t\tResistencia:%i\n\t\t\tAgilidade:%i\n\t\t\tMagia:%i\n",
+                                                                                                 p1.nome,
+                                                                                            p1.forca, p1.resistencia, p1.agilidade, p1.magia);
+                                                                                             
+                                                                                             }
+             
+//...................................................****FUNCAO LOBO CINZA****..............................................................................
+                           void lobo_cinza(){
+                                                                                            typedef struct
+                                                                                            {
+   
+
+                                                                                            char nome[30];
+                                                                                                                 
+                                                                                            int forca;
+                                                                                                                 
+                                                                                            int agilidade;
+                                                                                                                 
+                                                                                            int resistencia;
+                                                                                                                 
+                                                                                            int magia;
+                                                                                                               
+                                                                                                           
+                                                                                            } personagem; //ESTRUCT DO PERSONAGEM
+                                                                                           
+                                                                                            int ac[5];
+                                                                                            char escolha;
+                                                                                            int tempo=0;
+                                                                                            int contador=0;
+                                                                                            //..........................***CRIANDO O LOBO CINZA SELVAGEM***..................................
+                                                                                                               
+                                                                                            personagem i[2];
+                                                                                                             
+                                                                                                             
+                                                                                            printf ("\n\n\n");
+                                                                                                             
+                                                                                            strcpy (i[0].nome, "Lobo Cinza Selvagem");
+                                                                                                             
+                                                                                            i[0].forca = 3;
+                                                                                                             
+                                                                                            i[0].resistencia = 2;
+                                                                                                             
+                                                                                            i[0].agilidade = 5;
+                                                                                                             
+                                                                                            i[0].magia = 0;
+                                                                                                             
+                                                                                            //..........................***TELA DA APRESENTACAO DO LOBO CINZA***.......................
+                                                                                                             
+                                                                                            printf ("\n\n\n");
+                                                                                            printf("\t\t\t\t\t\t%s\n\t\t\tForca:%i\n\t\t\tResistencia:%i\n\t\t\tAgilidade:%i\n\t\t\tMagia:%i",
+                                                                                                   i[0].nome, i[0].forca, i[0].resistencia, i[0].agilidade, i[0].magia);
+                                                                                                   
+                                                                                }
+                                                                                                                     
+ //...................................................****FUNCAO ESPECTRO CINZA****...........................................................................................................................
+
+                            void espectro_cinza(){
+ 
+                                                                                                             
+                                                                                                            typedef struct
+                                                                                                            {
+                   
+               
+                                                                                                            char nome[30];
+                                                                                                                                 
+                                                                                                            int forca;
+                                                                                                                                 
+                                                                                                            int agilidade;
+                                                                                                                                 
+                                                                                                            int resistencia;
+                                                                                                                                 
+                                                                                                            int magia;
+                                                                                                                               
+                                                                                                                           
+                                                                                                            } personagem; //ESTRUCT DO PERSONAGEM
+                                                                                                                             
+                                                                                                                             
+                                                                                                                             
+                                                                                                            personagem p1, p2;
+                                                                                                            int ac[5];
+                                                                                                            char escolha;
+                                                                                                            int tempo=0;
+                                                                                                            int contador=0;
+                                                                                                            //..........................***CRIANDO O ESPECTRO CINZA***..................................
+                                                                                                               
+                                                                                                            personagem i[2];
+                                                                                                             
+                                                                                                             
+                                                                                                            printf ("\n\n\n");
+                                                                                                             
+                                                                                                            strcpy (i[0].nome, "Espectro Cinza");
+                                                                                                             
+                                                                                                            i[0].forca = 3;
+                                                                                                             
+                                                                                                            i[0].resistencia = 2;
+                                                                                                             
+                                                                                                            i[0].agilidade = 5;
+                                                                                                             
+                                                                                                            i[0].magia = 0;
+                                                                                                             
+                                                                                                            //..........................***TELA DA APRESENTACAO DO INIMIGO***.......................
+                                                                                                             
+                                                                                                            printf ("\n\n\n");
+                                                                                                            printf("\t\t\t\t\t\t%s\n\t\t\tForca:%i\n\t\t\tResistencia:%i\n\t\t\tAgilidade:%i\n\t\t\tMagia:%i",
+                                                                                                                 i[0].nome, i[0].forca, i[0].resistencia, i[0].agilidade, i[0].magia);
+                                                                               
+                                                                                                            }
+                                   
+                                   
+                                   
+                           void aventura1(){
+                                                                                                            char escolha;
+                                                                                                            //..............***TELA DE ESCOLHA DA AVENTURA DO USUARIO***........................................
+                                                                                                            printf ("\n\n\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\t\t\t\tESCOLHA\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tEXPLORAR A FLORESTA:1\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tEXPLORAR O CASTELO:2\n");
+                                                                                                             
+                                                                                                            scanf ("%c", &escolha);
+                                                                                                           
+                                                                                                            if(escolha=='1'){floresta();}
+                                                                                                           
+                                                                                                               
+                                                                                                   
+                                                                                                            else if (escolha=='2'){}
+                                                                                                       
+                                                                                                           
+                                                                                                            return;
+                                                                                                            }
+                                                                                                           
+                         void aventura2(){                                                              
+                                                                                                            char escolha;
+                                                                                                            //..............***TELA DE ESCOLHA DA AVENTURA DO USUARIO***........................................
+                                                                                                            printf ("\n\n\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\t\t\t\tESCOLHA\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tEXPLORAR AS MONTANHAS:1\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tEXPLORAR A FLORESTA:2\n");
+                                                                                                           
+                                                                                                            printf ("\t\t\tSAIR DA FLORESTA:3\n");
+                                                                                                             
+                                                                                                             scanf ("%c", &escolha);
+                                                                                                             
+                                                                                                             if(escolha=='1'){ }
+                                                                                                             
+                                                                                                            else if (escolha=='2'){floresta();}
+                                                                                                            else if (escolha=='3'){}
+                                                                                                           
+                                                                                                            return ;
+                                                                                                            }
+                                                                                                             
+                         void aventura3(){                                                                
+                                                                                                            char escolha;
+                                                                                                            //..............***TELA DE ESCOLHA DA AVENTURA DO USUARIO***........................................
+                                                                                                            printf ("\n\n\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\t\t\t\tESCOLHA\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tENTRAR NO PORTAL:1\n");
+                                                                                                             
+                                                                                                            printf ("\t\t\tEXPLORAR AS MONTANHAS:2\n");
+                                                                                                           
+                                                                                                            printf ("\t\t\tSAIR DAS MONTANHAS:3\n");
+ 
+                                                                                                            scanf ("%c", &escolha);
+                                                                                                             if(escolha=='1'){}
+                                                                                                            else if (escolha=='2'){}
+                                                                                                            else if (escolha=='3'){}
+                                                                                                             return;
+                                                                                                            }
+                                                                                                             
+                                                                               
+//...................................................****FUNCAO FLORESTA****...........................................................................................................................
+                        void floresta(){
+   
+                                                                                                            int contador=0;
+                                                                                                            int acontecimento;
+                                                                                                            while(contador<=5){
+                                                                                                           
+                                                                                                            acontecimento=rola_d10();
+                                                                                                           
+                                                                                                            if(acontecimento==1){
+                                                                                                                printf(
+                                                                                                                "\n\t\t\tVocê encontrou uma toca entre as raízes de uma árvore velha.\n\t\t\t Dentro dela havia uma poção verde que te pareceu útil \n ");
+                                                                                                               
+                                                                                                                getchar();
+                                                                                                                system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==2){
+                                                                                                                 printf("\t\t\t\nVocê encontrou um Lobo cinzento feroz\n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                           
+                                                                                                            else if(acontecimento==3){
+                                                                                                                 printf("\n\t\t\tVocê encontrou um Elfo Selvagem \n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==4){
+                                                                                                                 printf("\n\t\t\tVocê encontrou uma Gigantesca aranha negra\n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==5){
+                                                                                                                 printf("\n\t\t\tVocê encontrou uma espada curta \n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==6){
+                                                                                                                 printf("\n\t\t\tVocê encontrou uma pequena cabana de madeira\n\t\t\tNela haviam pergaminhos velhos e você pegou um que lhe parecia útil\n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==7){
+                                                                                                                 printf("\n\t\t\tVocê encontrou uma ursa parda \n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==8){
+                                                                                                                 printf("\n\t\t\tVocê encontrou um arco de ganhos entrelaçados\n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==9){
+                                                                                                                 printf("\n\t\t\tVocê encontrou um machado de prata \n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                            else if(acontecimento==10){
+                                                                                                                 printf("\n\t\t\tVocê encontrou um ladrão da floresta que quer tomar seus bens\n");
+                                                                                                                 lobo_cinza();
+                                                                                                                 getchar();
+                                                                                                                 system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                               
+                                                                                                                contador++;
+                                                                                                                printf("\n%i\n",contador);
+                                                                                                                lobo_cinza();
+                                                                                                                getchar();
+                                                                                                                system("clear");
+                                                                                                               
+                                                                                                            }
+                                                                                                           
+                                                                                                          return;
+                                                                                                           
+                                                                                                        }
+
+
+//.........................***DECLARACAO DAS VARIAVEIS***..............................    
+
+
+ 
+ int
+main ()
+{
+ int tempo=0;
+ int contador=0;
+ char escolha;
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/ while(tempo!=100){/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+     
+    comeco();
+    getchar();
+    system("clear");
+    aventura1();
+    aventura2();
+    aventura3();
+    getchar();
+    system("clear");
+   
+     
+ /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/}/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+return 0;
+
+ 
+ 
+}
+
+
+/*if(escolha== '1')  {  
+}
+                            //..............***TELA DE ESCOLHA DA AÇÃO DO USUARIO***........................................
+                            printf ("\n\n\n");
+                             
+                            printf ("\t\t\t\t\t\tESCOLHA\n");
+                             
+                            printf ("\t\t\tENFRENTAR:1\n");
+                             
+                            printf ("\t\t\tFUGIR:2\n");
+                             
+                            getchar();  
+                            scanf ("%c", &escolha);
+                           
+                              //if(escolha== '1'){}
+                             
+                              if(escolha == '2'){
+                                  ac[0]=rola_d10();
+                                  conta_segundos(3);
+                                  ac[1]=rola_d10();
+                                  if(ac[0]+p1.agilidade>ac[1]+i[0].agilidade){
+                                      printf("\t\t\t\t\t\tVOCE CONSEGUIU FUGIR DO  %s",i[0].nome);
+                                  }
+                                  else{
+                                    printf("\t\t\t\t\t\tVOCE NÃO CONSEGUIU  FUGIR DO  %s\n \t\t\t\t\t\tE ELE MORDEU VOCE!",i[0].nome);  
+                                  }
+                              }
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                    }
+                   
+                   
+                   
+                   
+                   
+ if(escolha== '2')  {
+                           
+                             
+                    }
+ 
+ 
+ 
+
+ 
+
+   
+ 
+ */
