@@ -1,0 +1,295 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+
+void trocar_linhas ( int l1, int l2, float **M, int l, int c){
+
+int i;
+float aux;
+
+for(i=0;i<c;i++){
+
+    aux=M[l1][i];
+    M[l1][i]=M[l2][i];
+    M[l2][i]=aux;
+
+}
+
+
+
+}
+
+
+void multiplicar_escalar_linha (int l1 ,float esc, float **M, int l, int c ){
+
+int i;
+
+for(i=0;i<c;i++){
+
+    M[l1][i]=M[l1][i]*esc;
+
+}
+
+}
+
+
+
+void somar_linhas ( int l1, int l2, float **M, float esc, int l, int c ){
+// Soma à linha i o produto da linha j por a
+int i;
+
+for(i=0;i<c;i++){
+   
+    M[l2][i]=M[l2][i]+(M[l1][i]*esc);
+}
+
+}
+
+
+
+void zerar_posicao_abaixo ( float **M, int l_e_zerado, int c_e_zerado, int l, int c){
+// Zera a posi ç ã o M [ i ][ j ] da matriz M , onde i > j       Li ← Li −[(aij/ajj)*Lj]
+
+int i, j;
+
+for(i=0;i<c;i++){
+   
+M[l_e_zerado][i]=M[l_e_zerado][i]-((M[l_e_zerado][c_e_zerado]/M[c_e_zerado][c_e_zerado])*M[c_e_zerado][i]);
+
+}
+
+   
+}
+
+void zerar_coluna_abaixo (float **M, int coluna, int l, int c ){
+// Zera as posi ç õ es da coluna j da matriz M abaixo da diagonal principal
+    int i;
+   
+    for(i=coluna+1;i<l;i++){
+       
+         zerar_posicao_abaixo (M, i, coluna, l, c);
+       
+    }
+   
+   
+}
+
+
+void zera_tudo_abaixo (float **M, int l, int c ){
+ int i;
+ 
+ for(i=0;i<c;i++){
+     
+     zerar_coluna_abaixo (M,  i, l, c );
+ }
+   
+}
+
+
+void zera_posicao_acima (float **M, int l_e_zerado,  int c_e_zerado, int l, int c){
+   
+for(int i=c;i>=0;i--){
+   
+M[l_e_zerado][i]=M[l_e_zerado][i]-((M[l_e_zerado][c_e_zerado]/M[c_e_zerado][c_e_zerado])*M[c_e_zerado][i]);
+
+}
+
+   
+}
+
+int l,c;
+int i,j;
+int l1,l2;
+float esc;
+
+scanf("%d%d",&l,&c);
+
+float * ponteiros_p_vetores[l], **M;
+
+//alocando a matriz
+for(i=0;i<l;i++){
+
+ponteiros_p_vetores[i]=(float*)(malloc(c*sizeof(float)));
+
+}
+
+//inicializando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+        printf("digite o elemento da matriz\n");
+        scanf("%f",&ponteiros_p_vetores[i][j]);
+
+    }
+}
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+printf("\n");
+
+
+/*
+//.......................permutando
+
+printf("Digite o numero das duas linhas que serao permutadas\n");
+scanf("%d%d",&l1,&l2);
+
+M=&ponteiros_p_vetores;
+
+trocar_linhas ( l1, l2, M, l, c);
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+//............multiplicando por escalar
+printf("Digite o escalar e a linha que sera multiplicado\n");
+scanf("%f%d",&esc,&l1);
+multiplicar_escalar_linha ( l1 , esc, M, l, c);
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+//..............soma linha multiplicada
+printf("Digite a linha que será multiplicada, o escalar pelo qual ela será multiplicada\n");
+printf("Em seguida digite a linha com a qual o produto será somado\n");
+scanf("%d%f%d",&l1,&esc,&l2);
+
+somar_linhas ( l1, l2, ponteiros_p_vetores, esc, l, c );
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+//.............zerando elemento abaixo da diagonal principal
+int l_e_zerado, c_e_zerado;
+printf("Digite a coluna e a linha do elemento a ser zerado que esteja abaixo da diagonal principal da matriz\n");
+scanf("%d%d",&l_e_zerado,&c_e_zerado);
+zerar_posicao_abaixo (ponteiros_p_vetores, l_e_zerado, c_e_zerado, l,c);
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+
+
+
+
+// ZERANDO TODOS OS ELEMENTOS ABAIXO DO PIVÔ DE UMA coluna
+printf("Digite o número da coluna que será ZERADA\n");
+scanf("%d",&l1);
+
+zerar_coluna_abaixo (ponteiros_p_vetores  ,l1  ,l ,c);
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+
+
+
+zera_tudo_abaixo (ponteiros_p_vetores,  l, c );
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+*/
+
+int l_e_zerado, c_e_zerado;
+printf("Digite a coluna e a linha do elemento a ser zerado que esteja abaixo da diagonal principal da matriz\n");
+scanf("%d%d",&l_e_zerado,&c_e_zerado);
+
+zera_posicao_acima (ponteiros_p_vetores , l_e_zerado,  c_e_zerado, l, c);
+
+//printando a matriz
+for(i=0;i<l;i++){
+
+    for(j=0;j<c;j++){
+
+        printf("%f ",ponteiros_p_vetores[i][j]);
+
+    }
+    printf("\n");
+}
+printf("\n");
+
+
+
+//..................liberando memória
+for(i=0;i<l;i++){
+free(ponteiros_p_vetores[i]);
+
+}
+
+return 0;
+}
