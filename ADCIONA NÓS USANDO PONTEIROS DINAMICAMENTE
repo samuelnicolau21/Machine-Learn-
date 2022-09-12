@@ -1,0 +1,40 @@
+void adciona_operacao_no_endereco_x (operacao *x, char i){
+
+typedef struct operacao {char tipo_operacao;                         //struct de uma operacao
+                        char id_transacao;
+                        char objeto[10];
+                        struct operacao *operacao_seguinte;}operacao;
+   
+   char id_t, obj[10];
+  x=malloc(sizeof(operacao));
+  i='L';
+ 
+ 
+                while(i!='\n'){
+                   
+                    if(i!=' '){
+                                            x->tipo_operacao=i;
+                                            scanf("%c",&id_t);
+                                            x->id_transacao=id_t;
+                                            scanf("%s",obj);
+                                            strcpy(x->objeto,obj);
+                                            scanf("%c",&i);
+                                            x->operacao_seguinte=malloc(sizeof(operacao));
+                                            x=x->operacao_seguinte;
+                                        }
+                                       
+                    else{                  
+                                            scanf("%c",&i);
+                                            x->tipo_operacao=i;
+                                            scanf("%c",&id_t);
+                                            x->id_transacao=id_t;
+                                            scanf("%s",obj);
+                                            strcpy(x->objeto,obj);
+                                            scanf("%c",&i);
+                                            x->operacao_seguinte=malloc(sizeof(operacao));
+                                            x=x->operacao_seguinte;
+                                        }                        
+                               
+                   
+                                        }
+};
