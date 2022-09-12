@@ -1,0 +1,445 @@
+de Ciência da Computação).
+...................................................................................................
+a) Faça um programa que recebe duas notas, calcule e mostre a média ponderada dessas
+notas, considerando peso 2 para a primeira e peso 3 para a segunda.
+
+
+	Portugol 
+
+	CALCULO_DA_MEDIA_PONDERADA
+	DECLARE n1,n2,m NUMÉRICO;
+	ESCREVA "DIGITE A PRIMEIRA NOTA";
+	LEIA n1;
+	ESCREVA "DIGITE A SEGUNDA NOTA";
+	LEIA n2;
+	m= [(2*n1)+(3*n2)]/5;
+	ESCREVA "A MÉDIA É",m;
+	FIM_ALGORÍTIMO
+
+...................................................................................................
+	C/C++
+
+	#include <stdio.h>
+
+	int main (void)
+{
+
+	float n1,n2,m;
+	printf("\n digite a primeira nota \n");
+	scanf("%f",&n1);
+	printf ("\n digite a segunda nota \n");
+	scanf("%f",&n2);
+	m=((2*n1)+(3*n2))/5;
+	printf ("\nmedia= %f", m);
+	return 0;
+}
+
+
+
+...................................................................................................
+b) Faça um programa que recebe o preço de um produto, calcule e mostre o novo preço,
+sabendo-se que este sofreu um desconto de 10%.
+
+
+	Portugol
+
+	DESCONTO_NO_PREÇO_DO_PRODUTO
+	DECALRE po,pf NUMÉRICO;
+	ESCREVA "DIGITE O PREÇO DO PRODUTO";
+	LEIA po;
+	pf= (0,9)*po;
+	ESCREVA "O PREÇO DECRECIDO EM 10% É", pf;
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++
+
+	#include <stdio.h>
+
+	int main(void)
+{
+
+	float po, pf;
+	printf("\nDIGITE O PREÇO DO PRODUTO\n");
+	scanf("%f",&po);
+	pf=po*(0,9);
+	printf("\nO PREÇO DECRESCIDO EM 10 POR CENTO É %f", pf);
+	return 0;
+}
+
+...................................................................................................
+c) Um funcionário recebe um salário fixo mais 4% de comissão sobre as vendas. Faça um
+programa que receba o salário fixo do funcionário e o valor de suas vendas, calcule e
+mostre a comissão e seu salário final.
+	
+	Portugol 
+	
+	SALÁRIO_E_COMISSÃO
+	DECLARE si,c,sf NUMÉRICO;
+	ESCREVA "DIGITE SEU SALÁRIO INICIAL";
+	LEIA si;
+	ESCREVA "DIGITE O VALOR DE SUAS VENDAS";
+	LEIA c;
+	sf= si+(0,04*c);
+	ESCREVA "SEU SASLÁRIO ACRESCIDO DE 4% SOBRE O VALOR DA COMISSÃO É ", sf;
+	FIM_ALGORÍTIMO
+
+...................................................................................................
+	C/C++	
+
+	#include <stdio.h>
+
+	int main(void)
+{
+	
+	float si,c,sf,p;
+	printf("\nDIGITE SEU SALÁRIO INICIAL\n");
+	scanf("%f",&si);
+	printf("\nDIGITE O VALOR DE SUAS VENDAS\n");
+	scanf("%f",&c);
+	p= 4/100*c;
+	sf=p+si;
+	printf("\nSEU SALÁRIO ACRESCIDO DE 4 POR CENTO SOBRE O VALOR DA COMISSÃO É %f", sf);
+	return 0;
+}
+
+
+...................................................................................................
+d) Faça um programa que receba o peso de uma pessoa em quilos, calcule e mostre esse
+peso em gramas.
+
+
+	Portugol
+	
+	PESO_EM_QUILOS
+	DECLARE pg,pk, NUMÉRICO;
+	ESCREVA "DIGITE SEU PESO EM QUILOS";
+	LEIA pk;
+	pg= pk*1000;
+	ESCREVA "SEU PESO EM GRAMAS É", pg;
+	FIM_ALGORÍTIMO
+...................................................................................................
+
+	C/C++
+	
+
+	#include <stdio.h>
+
+	int main(void)
+{
+
+	float pg, pk;
+	printf("\nDIGITE SEU PESO EM QUILOS\n");
+	scanf("%f",&pk);
+	pg= pk*1000;
+	printf("\nSEU PESO EM GRAMAS É %f",pg);
+	return 0;
+}
+
+...................................................................................................
+e) Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que A=((base
+maior + base menor) * altura)/2.
+
+	Portugol
+	
+	ÁREA_DO_TRAPÉZIO
+	DECLARE b,bm,h,a NUMÉRICO;
+	ESCREVA "DIGITE A ALTURA DO TRAPÉZIO";
+	LEIA h;
+	ESCREVA "DIGITE A BASE MENOR";
+	LEIA b;
+	ESCREVA "DIGITE A BASE MAIOR";
+	LEIA bm;
+	a=[(bm+b)*h]/2;
+	ESCREVA "A ÁREA DO TRAPÉZIO É ", a;
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++
+
+	#include <stdio.h>
+
+	int main(void)
+{
+
+	float b, bm, h, a;
+	printf("\nDIGITE A ALTURA DO TRAPÉZIO\n");
+	scanf("%f",&h);
+	printf("\nDIGITE A BASE MENOR\n");
+	scanf("%f",&b);
+	printf("\nDIGITE A BASE MAIOR\n");
+	scanf("%f",&bm);
+	a=((bm+b)*h)/2;
+	printf("\nA ÁREA DO TRAPÉZIO É %f",a );
+	return 0;
+
+}
+
+...................................................................................................
+f) Faça um programa que calcule e mostre a área de um quadrado.
+
+	Portugol
+	
+	ÁREA_DO_QUADRADO
+	DECLARE a,l NUMÉRICO;
+	ESCREVA "DIGITE O VALOR DO LADO DO QUADRADO";
+	LEIA l;
+	a= l^2;
+	ESCREVA "A ÁREA DO QUADRADO É ", a;
+	FIM_ALGORÍTIMO
+
+...................................................................................................
+	C/C++
+	#include <stdio.h>
+
+	int main(void)
+{
+
+	float a, l;
+	printf("\nDIGITE O VALOR DO LADO DO QUADRADO\n");
+	scanf("%f",&l);
+	a= l*l;
+	printf("\nA ÁREA DO QUADRADO É %f",a);
+	return 0;
+
+}
+
+
+...................................................................................................
+g) Faça um programa que recebe o valor do salário mínimo e o valor do salário de um
+funcionário, calcule e mostre a quantidade de salários mínimos que esse funcionário
+recebe.
+	
+	Portugol
+	
+	SALÁRIOS
+	DECLARE sm,s,ns NUMÉRICO;
+	ESCREVA "DIGITE O VALOR DO SEU SALÁRIO";
+	LEIA s;
+	ESCREVA "DIGITE O VALOR DE UM SALÁRIO MÍNIMO"
+	LEIA sm;
+	ns=s/sm;
+	ESCREVA ns, "É O NÚMERO DE SALÁRIOS MÍNIMOS QUE VOCÊ RECEBE";
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++
+
+	#include <stdio.h>
+
+	int main(void)
+{
+	float sm, s, ns;
+	printf("\nDIGITE O VALOR DO SEU SALÁRIO\n");
+	scanf("%f",&s);
+	printf("\nESCREVA O VALOR DE UM SALÁRIO MÍNIMO\n");
+	scanf("%f",&sm);
+	ns=s/sm;
+	printf( "\nO NÚMERO DE SALÁRIOS MÍNIMOS QUE VOCÊ RECEBE É \n %f",ns);
+	return 0;
+
+}
+...................................................................................................
+h) Faça um programa que calcule e mostre a tabuada de um número digitado pelo usuário.
+
+	Portugol 
+
+	TABUADA
+	DECLARE n,rm1,rm2,rm3,rm4,rm5,rm6,rm7,rm8,rm9,rm10, rm11 NUMÉRICO;
+	ESCREVA "DIGITE UM NÚMERO";
+	LEIA N1;
+	rm1=n*0;
+	rm2=n*1;
+	rm3=n*2;
+	rm4=n*3;
+	rm5=n*4;
+	rm6=n*5;
+	rm7=n*6;
+	rm8=n*7;
+	rm9=n*8;
+	rm10=n*9;
+	rm11=n*10;
+	ESCREVA "0*",n"=",rm1;
+	ESCREVA "1*",n"=",rm2"\n";
+	ESCREVA "2*",n"=",rm3"\n";
+	ESCREVA "3*",n"=",rm4"\n";
+	ESCREVA "4*",n"=",rm5"\n";
+	ESCREVA "5*",n"=",rm6"\n";
+	ESCREVA "6*",n"=",rm7"\n";
+	ESCREVA "7*",n"=",rm8"\n";
+	ESCREVA "8*",n"=",rm9"\n";
+	ESCREVA "9*",n"=",rm10"\n";	
+	ESCREVA "10*",n"=",rm11"\n";
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++
+	
+	#include <stdio.h>
+	
+	int main(void)
+{
+	int n,rm1,rm2,rm3,rm4,rm5,rm6,rm7,rm8,rm9,rm10, rm11;
+	printf("\nDIGITE UM NÚMERO\n");
+	scanf("%d",&n);
+	rm1=n*0;
+	rm2=n*1;
+	rm3=n*2;
+	rm4=n*3;
+	rm5=n*4;
+	rm6=n*5;
+	rm7=n*6;
+	rm8=n*7;
+	rm9=n*8;
+	rm10=n*9;
+	rm11=n*10;
+	printf("0*%d",n);
+	printf("=%d",rm1);
+	printf("\n");
+	printf("1*%d",n);
+	printf("=%d",rm2);
+	printf("\n");
+	printf("2*%d",n);
+	printf("=%d",rm3);
+	printf("\n");
+	printf("3*%d",n);
+	printf("=%d",rm4);
+	printf("\n");
+	printf("4*%d",n);
+	printf("=%d",rm5);
+	printf("\n");
+	printf("5*%d",n);
+	printf("=%d",rm6);
+	printf("\n");
+	printf("6*%d",n);
+	printf("=%d",rm7);
+	printf("\n");
+	printf("7*%d",n);
+	printf("=%d",rm8);
+	printf("\n");
+	printf("8*%d",n);
+	printf("=%d",rm9);
+	printf("\n");
+	printf("9*%d",n);
+	printf("=%d",rm10);
+	printf("\n");
+	printf("10*%d",n);
+	printf("=%d",rm11);
+	printf("\n");
+	return 0;	
+}
+
+...................................................................................................
+i) Faça um programa que recebe o ano de nascimento de uma pessoa e o ano atual, calcule
+e mostre:
+
+• A idade dessa pessoa em anos;
+• A idade dessa pessoa em meses;
+• A idade dessa pessoa em dias;
+• A idade dessa pessoa em semanas;
+
+	 Portugol 
+
+ 	DECLARE n,a,ia,im,id,is NUMÉRICO;
+	ESCREVA " DIGITE O ANO EM QUE VOCÊ NASCEU ";
+	LEIA n;
+	ESCREVA "DIGITE O ANO ATUAL";
+	LEIA a;
+	ia= a-n;
+	im= ia*12;
+	id= {[(ia/4)*366] + [ia*(3/4)]*365};             
+	is= id/7;
+	ESCREVA " SUA IDADE EM ANOS É ", ia;             
+	ESCREVA "SUA IDADE EM MESES É ", im;               
+	ESCREVA "SUA IDADE EM SEMANAS É ", is;              
+	ESCREVA "SUA IDADE EM DIAS É " , id;
+	FIM_ALGORÍTIMO
+
+...................................................................................................
+	C/C++
+
+
+	#include <stdio.h>
+
+	int main(void)
+{
+	int n, a, ia, im, id, is;
+	printf("\nDIGITE O ANO EM QUE VOCÊ NASCEU\n");
+	scanf("%d",&n);
+	printf("\nDIGITE O ANO ATUAL\n");
+	scanf("%d",&a);
+	ia=a-n;
+	im= ia*12;
+	id= ia*365;
+	is= id/7;
+	printf("\nSUA IDADE EM ANOS É %d", ia);
+	printf("\nSUA IDADE EM MESES É %d", im);
+	printf("\nSUA IDADE EM SEMANAS É %d", is);
+	printf("\nSUA IDADE EM DIAS É %d", id);
+	return 0;
+}
+
+...................................................................................................
+j) Faça um programa que recebe uma temperatura em Celsius, calcule e mostre essa
+temperatura em Fahrenheit.
+
+	Portugol
+
+	CONVERTE_TEMPERATURA
+	DECLARE tc,tf NUMÉRICO;
+	ESCREVA "DIGITE A TEMPERATURA EM CELSIUS";
+	LEIA tc;
+	tf= [(9*tc)/5]+32;
+	ESCREVA "A TEMPERATURA EM FAHRENHEIT É", tf;
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++
+
+	#include <stdio.h>
+
+	int main(void)
+{
+	
+	int tc, tf;
+	printf("\nDIGITE A TEMPERATURA EM CELSIUS\n");
+	scanf("%d",&tc);
+	tf= ((9*tc)/5)+32;
+	printf("\nA TEMPERATURA EM FAHRENHEIT É %d",tf);
+	return 0;
+}
+...................................................................................................
+k) Sabe-se que, para iluminar de maneira correta os cômodos de uma casa, para cada
+metro quadrado deve-se usar 18W de potência. Faça um programa que recebe as duas
+dimensões de um cômodo (em metros), calcule e mostre a sua área e a potência de
+iluminação que deverá ser utilizada.
+
+	Portugol
+
+	ILUMINAÇÃO_POR_METRO_QUADRADO
+	DECLARE comp, larg, a, pot, NUMÉRICO;
+	ESCREVA "DIGITE A LARGURA DO CÔMODO A SER ILUMINADO ( EM METROS ) ";
+	LEIA larg;
+	ESCREVA "DIGITE O COMPRIMENTO DO CÔMODO A SER ILUMINADO ( EM METROS ) ";
+	LEIA comp;
+	a=comp*larg;
+	pot=a*18;
+	ESCREVA " A ÁREA DO SEU CÔMODO É ", a;                                   //SALTAR UMA LINHA
+	ESCREVA "E A POTÊNCIA NECESSÁRIA PARA ILUMINAR ESSE CÔMODO É" , pot;
+	FIM_ALGORÍTIMO
+...................................................................................................
+	C/C++ 
+
+	#include <stdio.h>
+
+	int main(void)
+{
+	
+	float comp, larg, a, pot;
+	printf("\nDIGITE A LARGURA DO CÔMODO A SER ILUMINADO - EM METROS\n");
+	scanf("%f",&larg);
+	printf("\nDIGITE O COMPRIMENTO DO CÔMODO A SER ILUMINADO - EM METROS\n");
+	scanf("%f",&comp);
+	a=comp*larg;
+	pot=a*18;
+	printf("\n A ÁREA DO SEU CÔMODO É %f",a);
+	printf("M");
+	printf("\n E A POTÊNCIA NECESSÁRIA PARA ILUMINAR ESSE CÔMODO É %f",pot);
+	printf("W");
+	return 0;
+}
