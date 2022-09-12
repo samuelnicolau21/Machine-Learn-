@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+    int l=4,c=5;
+    int *pont_v[l];
+    int i,j;
+   
+   for(i=0;i<l;i++){
+   pont_v[i]=malloc(c*sizeof(int));
+   }
+   
+   for(i=0;i<l;i++){
+       for(j=0;j<c;j++){
+           pont_v[i][j]=0;
+       }
+   }
+   
+   for(i=0;i<l;i++){
+       for(j=0;j<c;j++){
+           printf("%d ",pont_v[i][j]);
+       }
+       printf("\n");
+   }
+ 
+   for(i=0;i<l;i++){
+   free(pont_v[i]);
+   }
+   
+   
+    return 0;
+}
