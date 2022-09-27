@@ -1,0 +1,37 @@
+void
+conta_segundos (int l)
+{
+
+  int i = 0, virada = 1, agora = 0, anterior = 0;
+
+
+  while (i <= l)
+    {
+      //se virada C) par eu vou guardar o valor aleatC3rio em agora
+      if (virada % 2 == 0)
+{
+ srand ((unsigned) time (NULL));
+ agora = rand () % 10 + 1;
+}
+      //se virada nC#o C) par eu vou guardar o valor aleatC3rio em anterior
+      if (virada % 2 != 0)
+{
+ srand ((unsigned) time (NULL));
+ anterior = rand () % 10 + 1;
+}
+      /*se o valor que eu guardei quando virada era par for diferente do que eu guardei quando virada
+         era C-mpar, entC#o significa que o valor aleatC3rio gerado acabou de mudar
+         se ele mudou, quer dizer que passou um segundo */
+
+      if (agora != anterior)
+{
+ //printf("%i,",i);
+ i++;
+}
+
+      virada++;
+
+    }
+
+  return;
+}
