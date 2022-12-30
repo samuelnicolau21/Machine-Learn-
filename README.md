@@ -1,2 +1,2 @@
-# Estrutura-de-Dados
-Algoritmos Criados durante minha disciplina de estrutura de dados
+# Inteligência Computacional Aplicada
+Algoritmos Criados durante minha disciplina Inteligência Computacional Aplicada
